@@ -38,17 +38,17 @@ elif age > 2:
 
 #实例2：采用条件语句演示数字猜谜游戏
 
-numeber = 7
+number = 7
 guess = -1
 
 print("Gusess the number!")
 
-while guess != numeber:
+while guess != number:
     guess = int(input("Is it..."))
 
-    if guess == numeber:
+    if guess == number:
         print("Hooray! you guess it right!")
-    elif guess < numeber:
+    elif guess < number:
         print("It's bigger...")
-    elif guess > numeber:
+    elif guess > number:
         print("It's not so big.")
