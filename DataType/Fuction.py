@@ -196,7 +196,38 @@ f(1,2,c=3)  #正确，输出结果为6
 '''
 #语法：lambda函数的语法只包含一个语句 ——> lambda [arg1[,arg2,...argn]]:expression
 #实例
+'''
 sum = lambda arg1, arg2: arg1 + arg2
 
 print("相加后的值为 ：", sum(10,20))
 print("相加后的值为 ：", sum(20,20))
+'''
+#return语句
+#概念：return语句[表达式]退出函数，选择性的调用方法返回的一个表达式，不带参数值的return语句返回None.之前的例子都没有示范如何返回数值
+'''
+def sum(arg1, arg2):
+    total = arg1 + arg2
+    print("insid the function:", total)
+    return total
+
+total = sum(10,20)
+print("outside the function:", total)
+'''
+#变量作用域
+#一个程序的所有的变量并不是在哪个位置都可以访问的。访问权限决定与这个变量在哪里赋值的
+#变量的作用域决定了在哪一个部分程序可以访问哪个特定的变量名称，两种最基本的变量作用域如下：
+#全局变量：定义在函数外部；可以在整个程序范围内访问
+#局部变量：定义在函数内部；局部变量只能在其他被声明的函数内部访问，
+
+#实例： 调用函数时，所有在函数内声明的变量名称都将被加入到作用域中
+
+total = 0
+#可写函数说明
+def sum(arg1, arg2):
+    #返回两个参数的和
+    total = arg1 +arg2  #total在这里是局部变量
+    print("insid the function:",total)
+    return total
+#调用sum函数
+sum(10,20)
+print("outside the function:",total)
